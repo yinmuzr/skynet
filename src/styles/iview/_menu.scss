@@ -1,0 +1,23 @@
+@import "../var.scss";
+
+.ivu-menu-light {
+  &.ivu-menu-horizontal {
+    padding-left: 50px;
+    .ivu-menu-item {
+      padding: 0;
+      margin-right: 60px;
+      font-size: $--font-size-title;
+      letter-spacing: 4px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .ivu-menu-item-active,
+    .ivu-menu-item:hover {
+      color: $--color-text-primary;
+      font-weight: bold;
+    }
+  }
+}

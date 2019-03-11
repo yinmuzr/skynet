@@ -1,0 +1,97 @@
+@import "../var.scss";
+.ivu-modal-close {
+  font-size: 26px;
+  color: #979797;
+}
+.ivu-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+
+  .ivu-modal-header p, .ivu-modal-header-inner {
+    color: $--color-text-primary;
+  }
+}
+
+.ie9 {
+  .ivu-modal {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    transform: none !important;
+  }
+}
+
+.ivu-modal-footer {
+  border-top: none;
+}
+.ivu-modal-confirm-head {
+  padding: 0 12px 0 0;
+
+  &-icon {
+    display: inline-block;
+    font-size: 28px;
+    vertical-align: middle;
+    position: relative;
+    padding-top: 4px;
+
+    &-info {
+      color: $--color-primary;
+    }
+
+    &-success {
+      color: $--color-success;
+    }
+
+    &-warning, &-confirm {
+      color: #f90;
+    }
+
+    &-error {
+      color: $--color-danger;
+    }
+  }
+
+  &-title{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 12px;
+    font-size: 16px;
+    color: $--color-text-primary;
+    font-weight: bold;
+  }
+}
+
+.ivu-modal-confirm-body {
+  font-size: 14px;
+  padding-left: 42px;
+}
+
+// filter modal to the left side
+.filter-modal-wrap {
+  .ivu-modal {
+    left: 3%;
+    transform: translate(0, -50%) !important;
+    // height: 650px;
+    // overflow: scroll;
+  }
+}
+
+// filter modal to the left side
+.ie9 {
+  .filter-modal-wrap {
+    .ivu-modal {
+      left: 3%;
+      top: 10%;
+      transform: none !important;
+      // height: 650px;
+      // overflow: scroll;
+    }
+  }
+}
+// ivu tooltip
+.ivu-tooltip-inner-with-width {
+  white-space: pre-wrap;
+  text-align: justify;
+}

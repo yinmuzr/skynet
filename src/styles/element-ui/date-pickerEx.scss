@@ -1,0 +1,21 @@
+.el-picker-panel__footer {
+  button:first-child {
+    display: none;
+  }
+}
+
+.el-date-editor {
+  i:not(:first-child) {
+    display: none;
+  }
+}
+
+.ie9 {
+  .el-date-editor {
+    padding-top: 0;
+
+    .el-range__icon {
+      margin-top: 2px;
+    }
+  }
+}

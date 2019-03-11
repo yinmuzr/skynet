@@ -1,0 +1,103 @@
+@import "@/styles/var.scss";
+.navigator-container {
+  .ivu-tree {
+    user-select: none;
+    ul.ivu-tree-children {
+      overflow: visible !important;
+      position: relative;
+      transition: all .2s ease-in-out;
+      &:before {
+        display: inline-block;
+        content: "";
+        position: absolute;
+        border-left: 1px solid #999;
+        height: 100%;
+        top: -2px;
+        width: 1px;
+      }
+      &:last-child:before {
+        height: 26px;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        right: auto;
+        border-top: 1px solid #999;
+        height: 20px;
+        top: 23px;
+        width: 15px;
+      }
+      &>li {
+        padding: 13px 0 0 0;
+        margin: 0 0 0 20px;
+        ul.ivu-tree-children {
+          padding-left: 32px;
+        }
+      }
+    }
+    .ivu-tree-title {
+      margin-top: -3px;
+      padding: 0;
+      &:hover {
+        background: none;
+      }
+    }
+    &>ul.ivu-tree-children {
+      padding-top: 5px;
+      &:before, &:after {
+        content: none;
+        width: 0;
+      }
+    }
+    &>ul.ivu-tree-children >li {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .ivu-tree-arrow {
+    padding: 4px;
+      &, & i {
+        font-size: 9px;
+      }
+  }
+  .ivue-tree-node-selected {
+    background-color:$--color-primary;
+    color: white;
+    &:hover {
+      background-color:$--color-primary !important;
+    }
+  }
+  .tree-node {
+    .ivu-tree-node {
+      font-size: 14px;
+      border-radius: 4px;
+      padding: 5px 10px;
+      display: inline-block;
+      &:hover {
+        cursor: pointer;
+        background-color:#ebf1ff
+      }
+    }
+  }
+  .ivu-tree-arrow-open {
+    .ivu-icon-ios-arrow-forward {
+      transform: none;
+      &::before {
+        background-image:url("assets/minus.svg");
+      }
+    }
+  }
+
+  .ivu-icon-ios-arrow-forward:before {
+    transition: none;
+    transform: none;
+    content: "";
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background-image:url("assets/plus.svg");
+    background-size:contain;
+    background-repeat: no-repeat;
+  }
+}

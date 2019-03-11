@@ -1,0 +1,47 @@
+{
+  "name": "skynet-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "vue-cli-service serve --port 8000",
+    "build": "vue-cli-service build",
+    "build:qa": "vue-cli-service build --mode qa",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "gitHooks": {
+    "pre-commit": "yarn lint",
+    "pre-push": "yarn lint"
+  },
+  "dependencies": {
+    "axios": "0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "classlist-polyfill": "^1.2.0",
+    "element-ui": "^2.5.4",
+    "ie9-oninput-polyfill": "^1.1.1",
+    "iview": "3.2.2",
+    "jquery": "^3.3.1",
+    "jwt-decode": "^2.2.0",
+    "lodash": "4.17.11",
+    "moment": "^2.23.0",
+    "raf": "^3.4.1",
+    "uuid": "^3.3.2",
+    "vue": "2.5.17",
+    "vue-router": "3.0.1",
+    "vuex": "3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.1",
+    "@vue/cli-plugin-eslint": "^3.0.1",
+    "@vue/cli-plugin-unit-jest": "^3.0.1",
+    "@vue/cli-service": "^3.0.1",
+    "@vue/eslint-config-airbnb": "^3.0.5",
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.0.1",
+    "css-split-webpack-plugin": "^0.2.6",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "vue-template-compiler": "2.5.17"
+  }
+}

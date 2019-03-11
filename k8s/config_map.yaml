@@ -1,0 +1,9 @@
+apiVersion: v1
+data:
+  api.url: http://52.80.164.66:30090
+  sso.url: http://52.80.164.66:30092
+  devMode: "false"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: skynet-frontend

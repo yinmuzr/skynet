@@ -1,0 +1,18 @@
+.progress-bar {
+  padding-left: 70px;
+  margin-left: -65px;
+  float: right;
+
+  .ivu-progress-inner {
+    border-radius: 0;
+    background: transparent;
+  }
+  .ivu-progress-success-bg {
+    display: none;
+  }
+
+  .ivu-progress-bg {
+    border-radius: 0;
+    background: #729dfb;
+  }
+}

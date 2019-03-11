@@ -1,0 +1,79 @@
+@import '@/styles/var.scss';
+
+.section-title {
+  font-weight: 500;
+  font-size: 16px;
+  color: #4a4f5d;
+  letter-spacing: 2px;
+  vertical-align: middle;
+}
+.layout {
+  width: 85%;
+  min-width: 1248px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.content-layout {
+  padding: 30px;
+  position: relative;
+}
+
+.title-container {
+  font-size: 16px;
+  line-height: 36px;
+  padding: 22px 16px;
+}
+
+.title-container:before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 1em;
+  vertical-align: middle;
+  background-color: $--color-primary;
+  margin-right: 13px;
+}
+
+.add-button {
+  float: right;
+  margin-right: 15px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  .add-button-icon {
+    margin: -3px -3px 1px -3px;
+    font-size: 20px;
+    font-weight: 800;
+    vertical-align: sub ;
+  }
+}
+
+.tips-icon {
+  color: $--color-primary;
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.el-table__body-wrapper{
+  height: 100%;
+}
+
+.ivu-dropdown-item {
+  text-align: center;
+}
+
+.ivu-btn {
+  .ivu-icon {
+    &+span {
+      margin-left: 0;
+    }
+    vertical-align: middle;
+  }
+}
+
+//hide clean button on date picker
+.ivu-picker-confirm {
+  .ivu-btn:nth-child(2) {
+    display: none;
+  }
+}
+

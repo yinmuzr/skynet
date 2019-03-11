@@ -1,0 +1,14 @@
+@import '../var.scss';
+
+.navbar-dropdown,
+.dropdown-wrap {
+  .ivu-dropdown-item {
+    &:hover {
+        background-color: #e6ebf6;
+    }
+  }
+  .ivu-dropdown-item-selected {
+    color: $--color-primary;
+    background: transparent;
+  }
+}

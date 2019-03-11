@@ -1,0 +1,97 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: $ENV
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  labels:
+    app: $APP_NAME
+
+  name: $APP_NAME
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: $APP_NAME
+      env: $ENV
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: $APP_NAME
+        env: $ENV
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - image: $DOCKER_REGISTRY_NAME/tw-gree/$APP_NAME:$IMAGE_TAG
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: $ENV
+          - name: API_URL
+            valueFrom:
+              configMapKeyRef:
+                name: $APP_NAME
+                key: api.url
+          - name: VUE_APP_SSO_LOGIN_URL
+            valueFrom:
+              configMapKeyRef:
+                name: $APP_NAME
+                key: sso.url
+          - name: DEV_MODE
+            valueFrom:
+              configMapKeyRef:
+                name: $APP_NAME
+                key: devMode
+        imagePullPolicy: Always
+        name: $APP_NAME
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: $ENV
+  creationTimestamp: null
+  labels:
+    app: $APP_NAME
+    env: $ENV
+  name: $APP_NAME
+spec:
+  ports:
+  - name: $APP_NAME
+    port: $APP_PORT
+    protocol: TCP
+    targetPort: $APP_PORT
+    nodePort: $NODE_PORT
+  selector:
+    app: $APP_NAME
+    env: $ENV
+  type: NodePort
+status:
+  loadBalancer: {}
+#---
+#
+#apiVersion: extensions/v1beta1
+#kind: Ingress
+#metadata:
+#  name: $APP_NAME
+#  namespace: $ENV
+#  annotations:
+#    kubernetes.io/ingress.class: "nginx"
+#    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+#    nginx.ingress.kubernetes.io/rewrite-target: /
+#spec:
+#  rules:
+#  - http:
+#      paths:
+#      - path: /$ENV/$APP_NAME/
+#        backend:
+#          serviceName: $APP_NAME
+#          servicePort: $APP_PORT

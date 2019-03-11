@@ -1,0 +1,185 @@
+@import '../var.scss';
+$error-hight: 14px;
+.ivu-form-item-error-tip {
+  padding-left: 20px;
+  line-height: $error-hight;
+  &:before {
+    position: absolute;
+    left: 0;
+    content: "×"; /* use the hex value here... */
+    font-size: 12px;
+    color: #fff;
+    background: $--color-danger;
+    line-height: 0.9;
+    text-align: center;
+    display: block;
+    border: 1px solid $--color-danger;
+    width: $error-hight;
+    height: $error-hight;
+    border-radius: 100%;
+  }
+}
+.ivu-form-item-label, .ivu-input
+{
+  font-size: 14px !important;
+}
+.ivu-modal-header-inner{
+  font-size: 16px !important;
+}
+.ivu-modal-body{
+  font-size: 14px;
+}
+
+.ivu-select-multiple {
+  .ivu-select-item-selected {
+    &::after {
+      // NOTE: - every time when you change the icon & iview styles
+      // - check if the `ios-checkmark` icon content is as the same as following
+      content:"\e955";
+    }
+  }
+}
+
+.ivu-tag {
+  font-size: $--common-font-size;
+  height: auto;
+}
+
+.form-wrapper {
+  margin-bottom: -25px;
+}
+
+.inline-form-item {
+  display: inline-block;
+  &.ivu-form-item {
+    margin-bottom: 26px;
+  }
+}
+
+.ivu-date-picker-prev-btn-arrow-double i:after,
+.ivu-date-picker-next-btn-arrow-double i:after {
+  content: '';
+}
+.ivu-input-prefix, .ivu-input-suffix {
+  width: 32px;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.ivu-input-suffix {
+  left: auto;
+  right: 0;
+}
+
+// styles for HierarchyOperationModal and OrganizationOperationModal
+.single-line-form {
+  .form-item-code {
+    width: 70%;
+    padding-right: 10px;
+    margin-right: 0;
+  }
+
+  .form-item-select {
+    width: 30%;
+    margin-right: 0;
+    .select {
+      width: 100%;
+    }
+  }
+
+  .organization-hierarchy-select {
+    .ivu-select-selected-value {
+      &::after{
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-left: 3px;
+        position: absolute;
+        top: 3px;
+        background-repeat: no-repeat;
+        background-size: 24px 24px;
+      }
+    }
+  }
+
+  .organization-hierarchy-select-top {
+    .ivu-select-selected-value {
+      &::after{
+        background-image:url("./assets/top.svg");
+      }
+    }
+  }
+
+  .organization-hierarchy-select-bottom {
+    .ivu-select-selected-value {
+      &::after{
+        background-image:url("./assets/bottom.svg");
+      }
+    }
+  }
+}
+
+.ivu-icon-skynet-top-level,
+.ivu-icon-skynet-bottom-level {
+  font-size: 22px;
+  color: #a5a7ae;
+  vertical-align: middle;
+  margin: -1px 4px 0 4px;
+}
+
+.ivu-input-number-input{
+  color: #4a4f5d;
+  font-size: 14px !important;
+}
+
+.filter-modal-wrap{
+  .ivu-picker-confirm
+  {
+    button:nth-child(2){
+      display: none;
+    }
+  }
+}
+
+.strategy-form-item{
+  width: 62%;
+  .ivu-form-item-error-tip{
+    left:100px;
+  }
+  .ivu-form-item-content form{
+    margin-left: 100px;
+  }
+}
+
+.type-or-reason {
+  margin-bottom: 0 !important;
+  .ivu-form-item-error-tip {
+    left: 0;
+  }
+}
+
+.period-form-item{
+  width: 34%;
+  .ivu-form-item-content{
+    .strategy-period{
+      float: right;
+      width: 200px;
+    }
+  }
+}
+
+.ivu-input-disabled {
+  background-color: #f9f9f9;
+    opacity: 1;
+    cursor: not-allowed;
+    color: rgba(74,79,93,.4);
+
+    &:hover {
+      border-color: #dce5f1;
+    }
+}
+

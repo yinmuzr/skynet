@@ -1,0 +1,85 @@
+@import '../var.scss';
+
+.el-table {
+  position: unset;
+
+  .cell {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .el-table__header-wrapper {
+    th{
+      border: 0;
+      height: 62px;
+      font-weight: bold;
+      color: $--color-text-primary;
+      background-color: #f5f7f9;
+
+      &:not(:first-child):before {
+        content: "";
+        position: absolute;
+        height: 1em;
+        top: 24px;
+        vertical-align: middle;
+        border: solid 0.7px #c3ccd8;
+      }
+    }
+
+    .table-cell-no-border {
+      &::before {
+        display: none !important;
+      }
+    }
+  }
+
+  td {
+    border: 0;
+    height: 60px;
+  }
+
+  .el-table__body tr {
+    &:hover > td {
+      background-color: $--table-highlight-color;
+      cursor: pointer;
+
+      &:not([rowspan="1"]) {
+        cursor: unset;
+        background-color: transparent;
+      }
+
+      &.stripe-cell {
+        background-color: $--table-highlight-color;
+        cursor: pointer;
+
+        &:not([rowspan="1"]) {
+          cursor: unset;
+          background-color: $--table-stripe-color;
+        }
+      }
+    }
+
+    &.disable-hover:hover > td {
+      background-color: transparent;
+
+      &.stripe-cell {
+        background-color: $--table-stripe-color;
+      }
+    }
+
+    > td.stripe-cell {
+      background-color: $--table-stripe-color;
+    }
+  }
+}
+
+// page style
+.ivu-page {
+  float: left;
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+.ivu-page-item {
+  margin-right: 8px;
+}
+
+

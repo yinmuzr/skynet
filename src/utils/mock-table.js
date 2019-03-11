@@ -1,0 +1,58 @@
+export const MOCK_SUMMARY = {
+  totalBatches: 355,
+  unqualifiedBatches: 100,
+  unqualifiedTypeBatches: [
+    { type: 'A', value: 10 },
+    { type: 'B', value: 20 },
+    { type: 'C', value: 30 },
+    { type: 'D', value: 40 },
+    { type: 'E', value: 50 },
+  ],
+};
+
+export const MOCK_SAMPLE_DATA = [
+  {
+    vendor: '大卫塑料制品有限公司 (983014)',
+    qualificationRate: Math.random(),
+    totalBatches: '365',
+    unqualifiedBatches: '100',
+    unqualifiedBatchesA: '10',
+    unqualifiedBatchesB: '20',
+    unqualifiedBatchesC: '30',
+    unqualifiedBatchesD: '40',
+    unqualifiedBatchesE: '0',
+  },
+  {
+    vendor: '熊猫包装有限公司 (984042)',
+    qualificationRate: Math.random(),
+    totalBatches: '365',
+    unqualifiedBatches: '100',
+    unqualifiedBatchesA: '10',
+    unqualifiedBatchesB: '20',
+    unqualifiedBatchesC: '30',
+    unqualifiedBatchesD: '40',
+    unqualifiedBatchesE: '0',
+  },
+  {
+    vendor: '伟业电子器件有限公司 (984001)',
+    qualificationRate: Math.random(),
+    totalBatches: '365',
+    unqualifiedBatches: '100',
+    unqualifiedBatchesA: '10',
+    unqualifiedBatchesB: '20',
+    unqualifiedBatchesC: '30',
+    unqualifiedBatchesD: '40',
+    unqualifiedBatchesE: '0',
+  },
+  {
+    vendor: '谷歌制冷配件有限公司 (935184)',
+    qualificationRate: Math.random(),
+    totalBatches: '365',
+    unqualifiedBatches: '100',
+    unqualifiedBatchesA: '10',
+    unqualifiedBatchesB: '20',
+    unqualifiedBatchesC: '30',
+    unqualifiedBatchesD: '40',
+    unqualifiedBatchesE: '0',
+  },
+];
